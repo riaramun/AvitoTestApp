@@ -13,7 +13,7 @@ import com.activeandroid.annotation.Table;
 @Table(name = "UserModel", id = BaseColumns._ID)
 public class UserModel extends Model {
 
-    @Column(name = "login")
+    @Column(name = "login",unique = true, onUniqueConflict = Column.ConflictAction.REPLACE)
     public String login;
 
 
