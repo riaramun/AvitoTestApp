@@ -24,12 +24,14 @@ public class HttpHelper {
                 .setCallback(new FutureCallback<JsonArray>() {
                     @Override
                     public void onCompleted(Exception e, JsonArray result) {
-                        for(int i = 0; i < result.size(); i ++ ) {
-                            JsonObject jsonObject = (JsonObject) result.get(i);
-                            UserModel userModel = new UserModel();
-                            userModel.avatar_url = jsonObject.get("avatar_url").getAsString();
-                            userModel.login = jsonObject.get("login").getAsString();
-                            userModel.save();
+                        if(result != null) {
+                            for (int i = 0; i < result.size(); i++) {
+                                JsonObject jsonObject = (JsonObject) result.get(i);
+                                UserModel userModel = new UserModel();
+                                userModel.avatar_url = jsonObject.get("avatar_url").getAsString();
+                                userModel.login = jsonObject.get("login").getAsString();
+                                userModel.save();
+                            }
                         }
                     }
                 });
