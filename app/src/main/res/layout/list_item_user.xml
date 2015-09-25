@@ -1,0 +1,20 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="120dp"
+    android:padding="10dp">
+
+    <ImageView
+        android:id="@+id/user_image_view"
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true" />
+
+    <TextView
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/user_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/user_image_view" />
+
+</RelativeLayout>
